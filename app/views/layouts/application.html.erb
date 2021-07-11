@@ -10,6 +10,22 @@
   </head>
 
   <body>
+    <header>
+      <h1>Ruby on Rails スケジュール管理アプリ</h1>
+    </header>
     <%= yield %>
+    <footer class="content">
+      <h1>現在の日時:</h1>
+      <h1 id="date"></h1>
+      <h1 class="count">スケジュール数: <%= @post_count %></h1>
+    </footer>
+    
+    <script>
+      var today = new Date();
+      var year = today.getFullYear();
+      var month = today.getMonth() + 1;
+      var date = today.getDate();
+      document.getElementById("date").innerHTML = year + "年" + month + "月" + date + "日";
+    </script>
   </body>
 </html>
